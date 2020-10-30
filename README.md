@@ -72,8 +72,12 @@ Change **DocumentRoot** to your like ,as I have
 
 And **Directory** to same as **DocumentRoot**
 
+# warning
+ Try my custom command for apache
+https://github.com/thelearn-tech/apache-custom-command
 
 
+**If you copy don't forget to give me credit**
 
 
 
