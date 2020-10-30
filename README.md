@@ -74,7 +74,7 @@ And **Directory** to same as **DocumentRoot**
 
 # warning
  Try my custom command for apache
-https://github.com/thelearn-tech/apache-custom-command
+https://github.com/thelearn-tech/apache2-custom-command
 
 
 **If you copy don't forget to give me credit**
