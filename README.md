@@ -71,7 +71,18 @@ Scroll down to
 Change **DocumentRoot** to your like ,as I have
 
 And **Directory** to same as **DocumentRoot**
+# Visiting server 
 
+  When Apache server is running you can go to
+  ***http://localhost:8080*** or ***http://127.0.0.1:8080***
+  
+Or you can use your public IP address for example **http://168.198.0.1:8080**
+
+Type **ifconfig** in you termux to get your IP or go to you settings
+
+![alt text](https://i.ibb.co/Lxnn5Wq/Polish-20201102-080938498.jpg)
+rmnet_data2( will be your IP address)
+           
 # warning
  Try my custom command for apache
 https://github.com/thelearn-tech/apache2-custom-command
