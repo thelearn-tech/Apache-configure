@@ -25,7 +25,7 @@ now scroll down to ***Listen 8080***
 (Use ctrl+f to move cursor forward and ctrl+b to backwards)
 (Use arrow keys ,if you have , like I do)
 
-![alt text](https://i.ibb.co/S5XfQd6/Listen-8080.jpg)
+![alt text](https://i.ibb.co/wgz0Sf4/Polish-20201102-082837952.jpg)
 
 And change ***Listen 8080*** to 
 ***Listen 0.0.0.0:8080***
