@@ -30,7 +30,7 @@ now scroll down to ***Listen 8080***
 And change ***Listen 8080*** to 
 ***Listen 0.0.0.0:8080***
 
-![alt text](https://i.ibb.co/Wxn2Rp4/IMG-20201030-114700.jpg)
+![alt text](https://i.ibb.co/GVjkJvW/Polish-20201102-082555154.jpg)
 
 And scroll down even more
 To 
