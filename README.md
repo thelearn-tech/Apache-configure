@@ -6,7 +6,7 @@ to make it work properly
 
 Which this script will do automatically.
 
-# Apache2 configuration
+# Apache2 configuration manual
 Just follow the steps--
 
 ***cd /data/data/com.termux/files/user/etc/apache2***
