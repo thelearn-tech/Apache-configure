@@ -4,6 +4,8 @@ Configure your apache2 Web server ,for termux
 When you install apache2 in termux,you need to configure it,
 to make it work properly
 
+Which this script will do automatically.
+
 # Apache2 configuration
 Just follow the steps--
 
