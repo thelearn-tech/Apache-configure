@@ -8,11 +8,11 @@ echo
 printf '\033[32m';echo auto configuring http.conf
 cd
 mkdir host
-cd $PREFIX/etc/share/apache2
+cd /data/data/com.termux/files/usr/etc/apache2
 mv httpd.conf $HOME
 cd
 cd Apache-configure
-mv httpd.conf $PREFIX/etc/share/apache2
+mv httpd.conf /data/data/com.termux/files/usr/etc/apache2
 sleep 2
 clear 
 printf '\033[32m';echo installation complete
