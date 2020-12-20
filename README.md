@@ -1,10 +1,25 @@
 # Apache-configure
+![mm](https://img.shields.io/badge/Maintained-yes-green)
+
 Configure your apache2 Web server ,for termux
 
 When you install apache2 in termux,you need to configure it,
 to make it work properly
 
 Which this script will do automatically.
+
+
+           
+# Automatic configuration
+
+***git clone https://github.com/thelearn-tech/Apache-configure***
+
+***cd Apache-configure***
+
+***chmod +x install.sh***
+
+***./install.sh***
+
 
 # Apache2 configuration manual
 Just follow the steps--
@@ -84,17 +99,6 @@ Type **ifconfig** in you termux to get your IP or go to you settings
 
 ![alt text](https://i.ibb.co/Lxnn5Wq/Polish-20201102-080938498.jpg)
 rmnet_data2( will be your IP address)
-           
-# Automatic configuration
-
-***git clone https://github.com/thelearn-tech/Apache-configure***
-
-***cd Apache-configure***
-
-***chmod +x install.sh***
-
-***./install.sh***
-
 
 After automatic configuration your hosting directory
 Will be **$HOME/host**
