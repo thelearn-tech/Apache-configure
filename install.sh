@@ -6,10 +6,10 @@ clear
 echo
 echo
 printf '\033[32m';echo auto configuring http.conf
-cd
+cd /data/data/com.termux/files/home
 mkdir host
 cd /data/data/com.termux/files/usr/etc/apache2
-mv httpd.conf $HOME
+mv httpd.conf /data/data/com.termux/files/home
 cd
 cd Apache-configure
 mv httpd.conf /data/data/com.termux/files/usr/etc/apache2
