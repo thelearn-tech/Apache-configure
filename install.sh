@@ -1,19 +1,35 @@
+scriptHome=$HOME
+
 clear
-printf '\033[32m';echo "Hello! "
-sleep 1.5
-echo "This is a script to download Apache2, you can run your own web server. "
+echo "Hello! "
+echo " "
+echo " "
+sleep 2.5
+echo "This is a script to download Apache2 "
+sleep 1
+echo "you can run your own web server. :) "
 echo " "
 sleep 1.6
-printf '\033[36m';echo "Installation script by thelearn-tech"
+echo "Installation script by: "
+echo " "
 sleep 1.5
-echo "AKA Pritam Behera "
+echo "#########################"
+echo "###                   ###"
+echo "### - Thelearn-tech - ###"
+echo "###        aka        ###"
+echo "### - Pritam Behera - ###"
+echo "###                   ###"
+echo "#########################"
+echo " "
+sleep 1.5
 sleep 2
 echo " "
 echo " "
 setup() {
-    echo auto configuring http.conf
+    echo "Auto configuring http.conf "
 }
 
+# Check for the hosts file
 folderCheckOne() {
     cd /data/data/com.termux/files/home/
     echo "Checking for a hosts file... "
@@ -21,25 +37,30 @@ folderCheckOne() {
     then mkdir host
         echo "Hosts folder created! "
     else echo "Hosts folder found. "
+    echo "Moving on... "
+    echo " "
+    sleep 2
     fi
 }
 
-other() {
-    cd /data/data/com.termux/files/usr/etc/apache2
-    mv httpd.conf /data/data/com.termux/files/home
-    cd
-    cd Apache-configure
-    mv httpd.conf /data/data/com.termux/files/usr/etc/apache2
-    sleep 2
-    clear
-    printf '\033[32m';echo installation complete
-    echo
-    sleep 1
-    echo for more details visit my github
-    echo
-    printf '\033[36m';echo https://github.com/thelearn-tech/Apache-configure
-    sleep 3
-    clear
-}
+# cd into apache2 folder
+# and move the httpd.conf file
+cd /data/data/com.termux/files/usr/etc/apache2
+mv httpd.conf /data/data/com.termux/files/home
+cd $HOME
+cd Apache-configure
+mv httpd.conf /data/data/com.termux/files/usr/etc/apache2
+sleep 2
+echo " "
+echo " "
+echo "Installation complete!!"
+echo
+sleep 1
+echo "For more details, visit my github "
+echo
+echo "https://github.com/thelearn-tech/Apache-configure "
+sleep 3 
+exit 1
+
 folderCheckOne
 exit 1
