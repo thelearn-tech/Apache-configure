@@ -2,6 +2,7 @@ TodaysDate=$(date +"%m-%d-%Y")
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+# Animated text in terminal!
 animatedTextTest () {
     echo
     for l in  I n s t a l l a t i o n  ; do
@@ -27,22 +28,23 @@ checkIfApacheIsInstalled() {
     # sed -i "4 i\areReqPackagesInstalled=$areReqPackagesInstalled" /storage/emulated/0/install.sh
     # echo " "
 
-  ########  if [ ! -z $areReqPackagesInstalled ] ; then
-      ####  value=$areReqPackagesInstalled
-   # fi
+    ########  if [ ! -z $areReqPackagesInstalled ] ; then
+    ####  value=$areReqPackagesInstalled
+    # fi
 
     sleep 2
     echo "I am doing a quick check to see if Apache2 and ncurses-utils are installed.\n"
     sleep 2
 
-    # ncurses-utils is to enable bold text.
+    # ncurses-utils is required to enable bold text.
     pkgs='apache2 ncurses-utils'
     if ! dpkg -s $pkgs >/dev/null 2>&1; then
         echo "Apache2 & ncurses-utils aren't installed."
         echo "\nInstalling..."
         sleep 1
-        
+
         # Setting -y enables yes automatically
+        # versus making the user type in a Yes or no prompt.
         pkg install -y $pkgs
         sleep 3
         echo " "
@@ -51,14 +53,14 @@ checkIfApacheIsInstalled() {
         sleep 1.5
 
     else echo "Apache2 and libncurses-utils are installed!"
-    echo " "
+        echo " "
         sleep 1.5
         echo "Continuing..."
         echo " "
         echo " "
         sleep 2
         clear
-sleep 2
+        sleep 2
     fi
 }
 
@@ -72,25 +74,26 @@ welcome() {
     echo " "
     echo " "
     echo "This is a script to download Apache2."
-    sleep 2.3
+    sleep 2.5
     echo "Meaning, you can use Termux to run a local web server.\n"
     sleep 4
     echo " "
+    clear
+    sleep 3
     echo "Installation script by: "
-   # animatedTextTest
+    # animatedTextTest
     echo " "
     sleep 1.5
     echo "###############################################"
     echo "#                                             #"
+    echo "#               =================             #"
+    echo "#               = Thelearn-tech =             #"
+    echo "#               =================             #"
     echo "#                                             #"
-    echo "#              • Thelearn-tech •              #"
-    echo "#                =============                #"
+    echo "#                     AKA:                    #"
+    echo "#              - Pritam Behera -              #"
     echo "#                                             #"
-    echo "#                     AKA                     #"
-    echo "#             -- Pritam Behera --             #"
-    echo "#                                             #"
-    echo "#                                             #" 
-    echo "###############################################"                        
+    echo "###############################################"
     echo " "
     echo " "
     sleep 4
@@ -103,6 +106,8 @@ welcome() {
     echo " "
 }
 
+# We search for the host folder.
+# if it isnt found, just make the directory and continue.
 folderCheckHosts() {
     cd /data/data/com.termux/files/home/
     echo "Checking for a hosts file... "
@@ -119,7 +124,7 @@ folderCheckHosts() {
         echo "\nFolder created! "
         sleep 2
     else echo "Hosts folder found. \n"
-    sleep 3
+        sleep 3
         echo "Moving on... "
         sleep 1
         echo " "
@@ -127,6 +132,7 @@ folderCheckHosts() {
     fi
 }
 
+# This sets everything up.
 setup() {
 
     # cd to the apache2 folder
@@ -157,6 +163,7 @@ setup() {
     sleep 1.5
 }
 
+# WIP 01/09/21
 setROM_name () {
     if [ ! -z $ROM_name ] ; then
         value=$ROM_name
@@ -177,6 +184,7 @@ setROM_name () {
     fi
 }
 
+#
 Outro() {
 
     # Other
@@ -185,8 +193,10 @@ Outro() {
     echo " "
     sleep 1
     echo "For more details, visit my github:"
-    sleep 2
+    sleep 1
     echo "https://github.com/thelearn-tech/Apache-configure "
+    echo " "
+    echo " "
     sleep 3
 }
 
