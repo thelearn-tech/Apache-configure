@@ -8,10 +8,12 @@ to make it work properly
 
 **Install.sh  is modified by [HiFiiDev](https://github.com/HiFiiDev)**
 He created a more beautiful script than me.
+https://github.com/HiFiiDev
+
 
 Visit HiFiiDev [changelog script](https://github.com/HiFiiDev/ROM-Changes)
 If you like the way Installation script looks.
-
+https://github.com/HiFiiDev/ROM-Changes
            
 # Automatic configuration
 
