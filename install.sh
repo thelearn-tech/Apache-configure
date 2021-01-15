@@ -27,9 +27,9 @@ checkIfApacheIsInstalled() {
     # sed -i "4 i\areReqPackagesInstalled=$areReqPackagesInstalled" /storage/emulated/0/install.sh
     # echo " "
 
-  ########  if [ ! -z $areReqPackagesInstalled ] ; then
-      ####  value=$areReqPackagesInstalled
-   # fi
+    ########  if [ ! -z $areReqPackagesInstalled ] ; then
+    ####  value=$areReqPackagesInstalled
+    # fi
 
     sleep 2
     echo "I am doing a quick check to see if Apache2 and ncurses-utils are installed.\n"
@@ -41,7 +41,7 @@ checkIfApacheIsInstalled() {
         echo "Apache2 & ncurses-utils aren't installed."
         echo "\nInstalling..."
         sleep 1
-        
+
         # Setting -y enables yes automatically
         pkg install -y $pkgs
         sleep 3
@@ -51,14 +51,14 @@ checkIfApacheIsInstalled() {
         sleep 1.5
 
     else echo "Apache2 and libncurses-utils are installed!"
-    echo " "
+        echo " "
         sleep 1.5
         echo "Continuing..."
         echo " "
         echo " "
         sleep 2
         clear
-sleep 2
+        sleep 2
     fi
 }
 
@@ -77,7 +77,7 @@ welcome() {
     sleep 4
     echo " "
     echo "Installation script by: "
-   # animatedTextTest
+    # animatedTextTest
     echo " "
     sleep 1.5
     echo "###############################################"
@@ -89,11 +89,11 @@ welcome() {
     echo "#                     AKA                     #"
     echo "#             -- Pritam Behera --             #"
     echo "#                                             #"
-    echo "#                                             #" 
-    echo "###############################################"                        
+    echo "#                                             #"
+    echo "###############################################"
     echo " "
-  sleep 2
-echo "code modified by https://github.com/HiFiiDev"
+    sleep 2
+    echo "code modified by https://github.com/HiFiiDev"
     echo " "
     sleep 4
     echo " "
@@ -121,7 +121,7 @@ folderCheckHosts() {
         echo "\nFolder created! "
         sleep 2
     else echo "Hosts folder found. \n"
-    sleep 3
+        sleep 3
         echo "Moving on... "
         sleep 1
         echo " "
