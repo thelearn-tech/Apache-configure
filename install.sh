@@ -1,3 +1,4 @@
+#!/bin/basb
 TodaysDate=$(date +"%m-%d-%Y")
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -20,6 +21,80 @@ animatedTextTest () {
     done
 }
 
+changelogFolder () {
+    # clear
+
+    if [ ! -d changes ]
+    then echo " "
+        echo " "
+        echo "Creating changes folder..."
+        sleep 1
+        mkdir changes
+        sleep 2
+        echo " "
+        echo "Done!"
+        sleep 1
+        echo " "
+
+        # Let the user know what's going on
+        echo "Adding Read and Write permissions to the folder..."
+        sleep 1
+        chmod 777 -R changes
+        echo "Done!"
+        echo "Moving on..."
+        sleep 1
+
+        # Now that all the boring setup stuff is done, let's let the user know.
+        noMoreBoringStuff
+
+    else echo " "
+        echo "Found the changes folder!"
+        sleep 2
+        echo " "
+        echo "Moving on..."
+        sleep 2
+        echo " "
+        echo " "
+
+    fi
+}
+
+CLprompt () {
+    if [ ! -z $changelog ] ; then
+        value=$changelog
+    fi
+
+    # show it to the user
+    echo -n "Would you like to view a changelog?\nPlease enter yes or no\n ${value}"
+    read input
+    if [ "$input" == "yes" ]
+    then
+        echo "Okay."
+        echo " "
+        sleep 1.5
+
+    fi
+
+    if [ -z "$value" ]
+    then
+        read -p "Set ROM name: " changelog
+        echo "Thanks, ROM name is $changelog"
+
+        # Kind of a neat trick.
+
+        # This takes the value the user was initially prompted
+        # for, and then saves that value into the first line of
+        # the script, therefore remembering thst value permanently.
+        sed -i "10 i\changelog=$changelog" changes.sh
+
+
+        echo " "
+        sleep 2
+    else
+        echo "$value"
+    fi
+}
+
 # Checks the package manager to see if Apache2 is installed.
 # if not, we install it. otherwise just echo that the package is already installed
 checkIfApacheIsInstalled() {
@@ -27,9 +102,9 @@ checkIfApacheIsInstalled() {
     # sed -i "4 i\areReqPackagesInstalled=$areReqPackagesInstalled" /storage/emulated/0/install.sh
     # echo " "
 
-  ########  if [ ! -z $areReqPackagesInstalled ] ; then
-      ####  value=$areReqPackagesInstalled
-   # fi
+    ########  if [ ! -z $areReqPackagesInstalled ] ; then
+    ####  value=$areReqPackagesInstalled
+    # fi
 
     sleep 2
     echo "I am doing a quick check to see if Apache2 and ncurses-utils are installed.\n"
@@ -41,7 +116,7 @@ checkIfApacheIsInstalled() {
         echo "Apache2 & ncurses-utils aren't installed."
         echo "\nInstalling..."
         sleep 1
-        
+
         # Setting -y enables yes automatically
         pkg install -y $pkgs
         sleep 3
@@ -51,14 +126,14 @@ checkIfApacheIsInstalled() {
         sleep 1.5
 
     else echo "Apache2 and libncurses-utils are installed!"
-    echo " "
+        echo " "
         sleep 1.5
         echo "Continuing..."
         echo " "
         echo " "
         sleep 2
         clear
-sleep 2
+        sleep 2
     fi
 }
 
@@ -67,6 +142,7 @@ welcome() {
     echo "${bold}Hello!"
     echo " "
     sleep 2
+    CLprompt
     # Quickly install Apache2 if it isnt installed
     checkIfApacheIsInstalled
     echo " "
@@ -77,7 +153,7 @@ welcome() {
     sleep 4
     echo " "
     echo "Installation script by: "
-   # animatedTextTest
+    # animatedTextTest
     echo " "
     sleep 1.5
     echo "###############################################"
@@ -89,11 +165,11 @@ welcome() {
     echo "#                     AKA                     #"
     echo "#             -- Pritam Behera --             #"
     echo "#                                             #"
-    echo "#                                             #" 
-    echo "###############################################"                        
+    echo "#                                             #"
+    echo "###############################################"
     echo " "
-  sleep 2
-echo "code modified by https://github.com/HiFiiDev"
+    sleep 2
+    echo "code modified by https://github.com/HiFiiDev"
     echo " "
     sleep 4
     echo " "
@@ -121,7 +197,7 @@ folderCheckHosts() {
         echo "\nFolder created! "
         sleep 2
     else echo "Hosts folder found. \n"
-    sleep 3
+        sleep 3
         echo "Moving on... "
         sleep 1
         echo " "
@@ -159,9 +235,9 @@ setup() {
     sleep 1.5
 }
 
-setROM_name () {
-    if [ ! -z $ROM_name ] ; then
-        value=$ROM_name
+setchangelog () {
+    if [ ! -z $changelog ] ; then
+        value=$changelog
     fi
 
     # show it to the user
@@ -169,9 +245,9 @@ setROM_name () {
 
     if [ -z "$value" ]
     then
-        read -p "Set ROM name: " ROM_name
-        echo "Thanks, ROM name is $ROM_name"
-        sed -i "4 i\ROM_name=$ROM_name" /storage/emulated/0/install.sh
+        read -p "Set ROM name: " changelog
+        echo "Thanks, ROM name is $changelog"
+        sed -i "4 i\changelog=$changelog" /storage/emulated/0/install.sh
         echo " "
         sleep 2
     else
@@ -194,10 +270,15 @@ Outro() {
 
 }
 
-
-
 # clear any text above
 clear
+
+
+#clear
+changelogFolder
+CLprompt
+#fi
+
 # Intro
 welcome
 # Check to see if the host folder has been made.
@@ -216,6 +297,6 @@ Outro
 ####                                           ####
 ####                                           ####
 ###################################################
-# setROM_name
+# setchangelog
 
 exit
