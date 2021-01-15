@@ -6,7 +6,7 @@ Configure your apache2 Web server ,for termux
 When you install apache2 in termux,you need to configure it,
 to make it work properly
 
-Install.sh modified by [HiFiiDev](https://github.com/HiFiiDev)
+**Install.sh  is modified by [HiFiiDev](https://github.com/HiFiiDev)**
 
 
 Which this script will do automatically.
