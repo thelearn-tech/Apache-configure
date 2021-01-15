@@ -7,7 +7,7 @@ When you install apache2 in termux,you need to configure it,
 to make it work properly
 
 **Install.sh  is modified by [HiFiiDev](https://github.com/HiFiiDev)**
-
+He created a more beautiful script than me.
 
 Which this script will do automatically.
 
