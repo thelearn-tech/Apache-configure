@@ -92,6 +92,8 @@ welcome() {
     echo "#                                             #" 
     echo "###############################################"                        
     echo " "
+  sleep 2
+echo "code modified by https://github.com/HiFiiDev"
     echo " "
     sleep 4
     echo " "
@@ -188,7 +190,11 @@ Outro() {
     sleep 2
     echo "https://github.com/thelearn-tech/Apache-configure "
     sleep 3
+
+
 }
+
+
 
 # clear any text above
 clear
