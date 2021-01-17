@@ -20,18 +20,34 @@ animatedTextTest () {
     done
 }
 
+rememberCLChoice () {
+    if [ ! -z $CL_Choice ] ; then
+        value=$CL_Choice
+    fi
+
+    ### echo "\nWould you like to see a changelog?: ${value}"
+
+    if [ -z "$value" ] ;
+    then echo "Looks like this is your first time running the script."
+        echo " "
+        echo " "
+        sleep 2
+        read -p "Would you like to view a changelog?: " CL_Choice
+        echo "Alright!"
+        sed -i "4 i\does_user_want_cl=$CL_Choice" $HOME/Apache-configure/install.sh
+        echo " "
+        read -p "Would you like to view a changelog every time the script opens?: " CL_Choice_Everytime
+        echo "Alright!"
+        sed -i "5 i\does_user_want_cl_every_time=$CL_Choice_Everytime" $HOME/Apache-configure/install.sh
+        sleep 2
+    else
+        ####
+    fi
+}
+
 # Checks the package manager to see if Apache2 is installed.
 # if not, we install it. otherwise just echo that the package is already installed
 checkIfApacheIsInstalled() {
-
-    # sed -i "4 i\areReqPackagesInstalled=$areReqPackagesInstalled" /storage/emulated/0/install.sh
-    # echo " "
-
-  ########  if [ ! -z $areReqPackagesInstalled ] ; then
-      ####  value=$areReqPackagesInstalled
-   # fi
-
-    sleep 2
     echo "I am doing a quick check to see if Apache2 and ncurses-utils are installed.\n"
     sleep 2
 
@@ -41,7 +57,7 @@ checkIfApacheIsInstalled() {
         echo "Apache2 & ncurses-utils aren't installed."
         echo "\nInstalling..."
         sleep 1
-        
+
         # Setting -y enables yes automatically
         pkg install -y $pkgs
         sleep 3
@@ -51,14 +67,14 @@ checkIfApacheIsInstalled() {
         sleep 1.5
 
     else echo "Apache2 and libncurses-utils are installed!"
-    echo " "
+        echo " "
         sleep 1.5
         echo "Continuing..."
         echo " "
         echo " "
         sleep 2
         clear
-sleep 2
+        sleep 2
     fi
 }
 
@@ -77,7 +93,7 @@ welcome() {
     sleep 4
     echo " "
     echo "Installation script by: "
-   # animatedTextTest
+    # animatedTextTest
     echo " "
     sleep 1.5
     echo "###############################################"
@@ -89,11 +105,11 @@ welcome() {
     echo "#                     AKA                     #"
     echo "#             -- Pritam Behera --             #"
     echo "#                                             #"
-    echo "#                                             #" 
-    echo "###############################################"                        
+    echo "#                                             #"
+    echo "###############################################"
     echo " "
-  sleep 2
-echo "code modified by https://github.com/HiFiiDev"
+    sleep 2
+    echo "code modified by https://github.com/HiFiiDev"
     echo " "
     sleep 4
     echo " "
@@ -121,7 +137,7 @@ folderCheckHosts() {
         echo "\nFolder created! "
         sleep 2
     else echo "Hosts folder found. \n"
-    sleep 3
+        sleep 3
         echo "Moving on... "
         sleep 1
         echo " "
