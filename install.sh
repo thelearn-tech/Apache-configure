@@ -24,13 +24,6 @@ animatedTextTest () {
 # if not, we install it. otherwise just echo that the package is already installed
 checkIfApacheIsInstalled() {
 
-    # sed -i "4 i\areReqPackagesInstalled=$areReqPackagesInstalled" /storage/emulated/0/install.sh
-    # echo " "
-
-  ########  if [ ! -z $areReqPackagesInstalled ] ; then
-      ####  value=$areReqPackagesInstalled
-   # fi
-
     sleep 2
     echo "I am doing a quick check to see if Apache2 and ncurses-utils are installed.\n"
     sleep 2
