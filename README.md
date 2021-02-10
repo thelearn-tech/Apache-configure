@@ -1,6 +1,8 @@
 # Apache-configure
 ![mm](https://img.shields.io/badge/Maintained-yes-green)
 
+[![HitCount](http://hits.dwyl.com/thelearn-tech/Apache-configure.svg)](http://hits.dwyl.com/thelearn-tech/Apache-configure)
+
 Configure your apache2 Web server ,for termux
 
 When you install apache2 in termux,you need to configure it,
