@@ -26,20 +26,12 @@ He created a more beautiful script than me.
 # Apache2 configuration manual
 Just follow the steps--
 
-***cd /data/data/com.termux/files/user/etc/apache2***
+```
+nano /data/data/com.termux/files/user/etc/apache2/httpd.conf
 
-***ls***
-
+```
          
-(Typing **ls** will show a file called **httpd.conf**)
-  (We need to edit that)
-
-So
-***nano httpd.conf***
-
-![alt text](https://i.ibb.co/Y2J0Fqr/nano-httpd-conf.jpg)
-
-now scroll down to ***Listen 8080***
+now scroll down to `Listen 8080`
 
 (Use ctrl+f to move cursor forward and ctrl+b to backwards)
 (Use arrow keys ,if you have , like I do)
@@ -98,18 +90,6 @@ And **Directory** to same as **DocumentRoot**
 Or you can use your public IP address for example **http://168.198.0.1:8080**
 
 Type **ifconfig** in you termux to get your IP or go to you settings
-
-![alt text](https://i.ibb.co/Lxnn5Wq/Polish-20201102-080938498.jpg)
-rmnet_data2( will be your IP address)
-
-After automatic configuration your hosting directory
-Will be **$HOME/host**
-
-
-# warning
- Try my custom command for apache
-https://github.com/thelearn-tech/apache2-custom-command
-
 
 **If you copy don't forget to give me credit**
 
